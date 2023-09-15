@@ -4,7 +4,7 @@ import { User } from "@/protocols";
 import { peopleService } from "@/services";
 
 async function read(req: Request, res: Response): Promise<void> {
-  const result = await peopleService.read();
+  const result: User | string = await peopleService.read();
   res.status(httpStatus.OK).send(result);
 }
 
